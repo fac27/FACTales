@@ -1,23 +1,32 @@
 const db = require('../database/db.js');
 
-module.exports = { selectBooks, insertBook };
+module.exports = { insertBook };
+
+const select_user = db.prepare(/*sql*/ `
+  SELECT user_id 
+  FROM users WHERE user_name = ?
+`);
 
 const select_book = db.prepare(/*sql*/ `
-  SELECT book, author FROM books WHERE book = ?
+  SELECT book_id FROM books WHERE book = ? AND author = ? LIMIT 1
 `);
 
 const create_book = db.prepare(/*sql*/ `
-  INSERT INTO books (book, author) VALUES (?, ?)
+  INSERT INTO books (book, author) VALUES (?, ?) RETURNING book_id
 `);
 
-function selectBooks(book) {
-  return select_books.all(book);
-}
+const create_book_recommendation = db.prepare(/*sql*/ `
+  INSERT INTO book_recommendations (user_id, book_id) VALUES (?, ?)
+`);
 
-function insertBook(book, author) {
-  const specific = select_book.get(book);
-  console.log(specific);
-  if (specific) return;
-  const element = create_book.run(book, author);
-  console.log(element);
+function insertBook(user, book, author) {
+  let book_id = select_book.get(book, author);
+  if (book_id === undefined) {
+    console.log('creating book');
+    book_id = create_book.get(book, author);
+  }
+  console.log(user);
+  const user_id = select_user.get(user);
+  console.log('user_id', user_id);
+  create_book_recommendation.run(user_id, book_id.book_id);
 }

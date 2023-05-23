@@ -1,9 +1,10 @@
 const { selectBook, insertBook } = require(`../model/books.js`);
 
-modules.exports = { post };
+module.exports = { post };
 
 function post(req, res) {
-  const { book, author } = req.body;
-  insertBook(book, author);
+  const { user, book, author } = req.query;
+  console.log(user);
+  insertBook(user, book, author);
   res.redirect(`/`);
 }
