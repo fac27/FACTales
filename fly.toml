@@ -1,10 +1,13 @@
-# fly.toml app configuration file generated for factales on 2023-05-23T11:00:09+01:00
+# fly.toml app configuration file generated for factales on 2023-05-23T12:09:13+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = "factales"
 primary_region = "lhr"
+
+[env]
+  PORT = "8080"
 
 [http_service]
   internal_port = 8080
