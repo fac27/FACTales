@@ -4,7 +4,7 @@ const { selectUser } = require('./users.js');
 module.exports = { insertMovie };
 
 const select_movie = db.prepare(/*sql*/ `
-  SELECT movie_id FROM movies WHERE movie = ? AND author = ? LIMIT 1
+  SELECT movie_id FROM movies WHERE movie = ? AND director = ? LIMIT 1
 `);
 
 const create_movie = db.prepare(/*sql*/ `
@@ -15,14 +15,12 @@ const create_movie_recommendation = db.prepare(/*sql*/ `
   INSERT INTO movie_recommendations (user_id, movie_id) VALUES (?, ?)
 `);
 
-function insertMovie(user, movie, author) {
-  let movie_id = select_movie.get(movie, author);
-  if (movie_id === undefined) {
-    console.log('creating movie');
-    movie_id = create_movie.get(movie, author);
-  }
-  console.log(user);
+function insertMovie(user, movie, director) {
   const user_id = selectUser(user);
-  console.log('user_id', user_id);
-  create_movie_recommendation.run(user_id, movie_id.movie_id);
+  let movie_id = select_movie.get(movie, director).movie_id;
+  if (movie_id === undefined) {
+    console.log(user_id, 'creating movie');
+    movie_id = create_movie.get(movie, director).movie_id;
+  }
+  create_movie_recommendation.run(user_id, movie_id);
 }
