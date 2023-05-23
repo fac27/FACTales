@@ -1,9 +1,8 @@
 -- PRAGMA foreign_keys = ON;
-
 BEGIN;
 
-CREATE TABLE IF NOT EXISTS names (
-  name_id INTEGER PRIMARY KEY AUTOINCREMENT,
+CREATE TABLE IF NOT EXISTS users (
+  user_id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL
 );
 
@@ -32,6 +31,3 @@ CREATE TABLE IF NOT EXISTS book_recommendations (
 );
 
 COMMIT;
-
-
-
