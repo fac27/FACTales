@@ -1,3 +1,4 @@
-const templates = require();
+const { layoutTemplate } = require("../templates/layout");
+const { server } = require("../server.js");
 
-function get() {}
+const getHomeRoute = 
