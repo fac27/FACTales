@@ -1,11 +1,7 @@
 const db = require('../database/db.js');
+const { selectUser } = require('./users.js');
 
 module.exports = { insertBook };
-
-const select_user = db.prepare(/*sql*/ `
-  SELECT user_id 
-  FROM users WHERE user_name = ?
-`);
 
 const select_book = db.prepare(/*sql*/ `
   SELECT book_id FROM books WHERE book = ? AND author = ? LIMIT 1
@@ -26,7 +22,7 @@ function insertBook(user, book, author) {
     book_id = create_book.get(book, author);
   }
   console.log(user);
-  const user_id = select_user.get(user);
+  const user_id = selectUser(user);
   console.log('user_id', user_id);
   create_book_recommendation.run(user_id, book_id.book_id);
 }
