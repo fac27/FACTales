@@ -1,4 +1,5 @@
 const formTemplate = require("./search-form.js");
+const homeHeader = require("./header-1.js")
 
 function layoutTemplate(title, content) {
   return /*html*/ `
