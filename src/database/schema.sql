@@ -21,13 +21,13 @@ CREATE TABLE IF NOT EXISTS books (
 CREATE TABLE IF NOT EXISTS movie_recommendations (
   movie_rec_id INTEGER PRIMARY KEY AUTOINCREMENT,
   movie_id INTEGER REFERENCES movies(movie_id),
-  name_id INTEGER REFERENCES names(name_id)
+  user_id INTEGER REFERENCES users(user_id)
 );
 
 CREATE TABLE IF NOT EXISTS book_recommendations (
   book_rec_id INTEGER PRIMARY KEY AUTOINCREMENT,
   book_id INTEGER REFERENCES books(book_id),
-  name_id INTEGER REFERENCES names(name_id)
+  user_id INTEGER REFERENCES users(user_id)
 );
 
 COMMIT;
