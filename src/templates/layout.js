@@ -6,7 +6,7 @@ const movieInputFormTemplate = require("./input-form.js");
 const bookInputFormTemplate = require("./input-form.js");
 
 
-function layoutTemplate(title, content) {
+function layoutTemplate(title) {
   return /*html*/ `
   <html lang = "en">
     <head>
