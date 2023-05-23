@@ -1,7 +1,9 @@
-const { selectBooks, insertBook } = require(`../model/books.js`);
+const { selectBook, insertBook } = require(`../model/books.js`);
+
+modules.exports = { post };
 
 function post(req, res) {
   const { book, author } = req.body;
-  const book_id = insertBook(book, author);
-  res.redirect(`/book/${book_id}`);
+  insertBook(book, author);
+  res.redirect(`/`);
 }

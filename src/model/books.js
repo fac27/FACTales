@@ -2,11 +2,7 @@ const db = require('../database/db.js');
 
 module.exports = { selectBooks, insertBook };
 
-const select_books = db.prepare(/*sql*/ `
-  SELECT book, author FROM books WHERE book = ?
-`);
-
-const select_specific_book = db.prepare(/*sql*/ `
+const select_book = db.prepare(/*sql*/ `
   SELECT book, author FROM books WHERE book = ?
 `);
 
@@ -19,10 +15,9 @@ function selectBooks(book) {
 }
 
 function insertBook(book, author) {
-  const specific = select_specific_book.get(book);
+  const specific = select_book.get(book);
   console.log(specific);
-  if (specific) return specific.book_id;
+  if (specific) return;
   const element = create_book.run(book, author);
   console.log(element);
-  return;
 }
