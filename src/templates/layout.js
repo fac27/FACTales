@@ -1,5 +1,10 @@
-const formTemplate = require("./search-form.js");
-const homeHeader = require("./header-1.js")
+const homeHeader  = require("./home-header.js");
+const viewRecommendations = require("./view-recs.js");
+const formPageHeader = require("./formPage-header.js");
+const filterRecommendations = require("./filter-recs.js");
+const movieInputFormTemplate = require("./input-form.js");
+const bookInputFormTemplate = require("./input-form.js");
+
 
 function layoutTemplate(title, content) {
   return /*html*/ `
@@ -10,8 +15,12 @@ function layoutTemplate(title, content) {
       <title>${title}</title>
     </head>
     <body>
-      ${formTemplate}
-      ${content}
+      ${homeHeader}
+      ${filterRecommendations}
+      ${viewRecommendations}
+      ${formPageHeader}
+      ${movieInputFormTemplate}
+      ${bookInputFormTemplate}
     </body>
   </html>
   `;

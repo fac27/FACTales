@@ -4,8 +4,8 @@ function movieInputFormTemplate(userNames) {
     <select>
       ${userNames.map((user) => `<option>${user}</option>`).join("")}
     </select>
-    <input type="text" placeholder="Enter the movie title"></input>
-    <input type="text" placeholder="Enter the director's name"></input>
+    <input type="text" placeholder="Enter the movie title"/>
+    <input type="text" placeholder="Enter the director's name"/>
     <button id="submit-button" type="submit">Search<button>
   </form>
   `;
@@ -17,8 +17,8 @@ function bookInputFormTemplate(userNames) {
     <select>
       ${userNames.map((user) => `<option>${user}</option>`).join("")}
     </select>
-    <input type="text" placeholder="Enter the book title"></input>
-    <input type="text" placeholder="Enter the author's name"></input>
+    <input type="text" placeholder="Enter the book title"/>
+    <input type="text" placeholder="Enter the author's name"/>
     <button id="submit-button" type="submit">Search<button>
   </form>
   `;
