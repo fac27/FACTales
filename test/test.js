@@ -5,6 +5,25 @@ const model = require("../model/routes.js"); // review file name in path
 const db = require("../src/database/db.js");
 const { reset } = require("./test-helper_functions.js");
 
+// TEST INSERT ////////////////////////
+//////////////////////////////////////
+
+// add user
+
+// add a recommendation
+
+// add a book
+
+// add a movie
+
+// TEST DELETE ////////////////////////
+//////////////////////////////////////
+
+// delete a recommendation
+
+// TEST SELECT ///////////////////////
+/////////////////////////////////////
+
 // select a user and display all their recommendations
 
 // select a director and display all their movies
