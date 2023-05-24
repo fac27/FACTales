@@ -3,7 +3,7 @@ const { layoutTemplate } = require('../templates/layout.js');
 module.exports = { post, get };
 
 function post(req, res) {
-  const { user, movie, director } = req.query;
+  const { user, movie, director } = req.body;
   insertMovie(user, movie, director);
   res.redirect(`/`);
 }
