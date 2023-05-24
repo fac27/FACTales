@@ -18,4 +18,4 @@ primary_region = "lhr"
 
 [mounts]
 source="volume_one"
-destination="DB_FILE"
+destination="/data"
