@@ -1,6 +1,6 @@
 const homeHeader = require('./home-header.js');
 const filterRecommendations = require('./filter-recs.js');
-const viewRecommendations = require('./view-recs.js');
+const { viewRecommendations } = require('./view-recs.js');
 const formPageHeader = require('./formPage-header.js');
 const { movieInputFormTemplate } = require('./input-form.js');
 const { bookInputFormTemplate } = require('./input-form.js');
