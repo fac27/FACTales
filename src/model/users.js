@@ -1,6 +1,5 @@
 const db = require('../database/db.js');
 
-module.exports = { selectUser };
 
 const select_user = db.prepare(/*sql*/ `
   SELECT user_id 
@@ -8,8 +7,21 @@ const select_user = db.prepare(/*sql*/ `
 `);
 
 function selectUser(user) {
-  const { user_id } = select_user.get(user);
-  console.log('user_id', user_id);
+  const user_id = select_user.get(user);
   //   return user_id.user_id;
   return user_id;
 }
+
+
+const select_user_names = db.prepare(/*sql*/`
+  SELECT 
+    user_name
+  FROM users 
+`);
+
+function selectUserNames(){
+  return select_user_names.all();
+}
+
+
+module.exports = { selectUser, selectUserNames };
