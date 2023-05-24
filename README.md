@@ -20,6 +20,7 @@ npm run seed
 ```
 npm run dev
 ```
+The app is currently not running on fly.io
 
 **Running tests**
 ```
