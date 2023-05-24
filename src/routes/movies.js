@@ -1,3 +1,4 @@
+
 const { insertMovie } = require(`../model/books.js`);
 const { layoutTemplate } = require("../templates/layout.js");
 module.exports = { post, get };
@@ -11,3 +12,4 @@ function post(req, res) {
 function get(rq, res) {
   res.send(layoutTemplate("homePage"));
 }
+
