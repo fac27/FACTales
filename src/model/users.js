@@ -7,8 +7,7 @@ const select_user = db.prepare(/*sql*/ `
 `);
 
 function selectUser(user) {
-  const { user_id } = select_user.get(user);
-  console.log('user_id', user_id);
+  const user_id = select_user.get(user);
   //   return user_id.user_id;
   return user_id;
 }

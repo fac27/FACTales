@@ -1,10 +1,11 @@
-const { selectMovie, insertMovie } = require(`../model/books.js`);
+const { selectMovie, insertMovie } = require(`../model/movies.js`);
 
-module.exports = { post };
+
 
 function post(req, res) {
-  const { user, movie, director } = req.query;
-  console.log(user);
+  const { user, movie, director } = req.body;
   insertMovie(user, movie, director);
   res.redirect(`/`);
 }
+
+module.exports = { post };
