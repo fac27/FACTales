@@ -18,3 +18,5 @@ function reset() {
     name='users';
   `);
 }
+
+module.exports = { reset };
