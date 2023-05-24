@@ -8,6 +8,18 @@ const { reset } = require("./test-helper_functions.js");
 // TEST INSERT ////////////////////////
 //////////////////////////////////////
 
+test("Recommendations are submitted to the database", () => {
+    reset(db);
+    const user_name = "Mark";
+    const movie_title = "Lord of the Rings";
+    const director = "I forgot";
+    insertMovie(user_name, movie_title, director);
+
+    assert.equal(user_id, 3);
+    assert.equal(movie_id, 1);
+})
+
+
 // add user
 
 // add a recommendation
