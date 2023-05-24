@@ -9,4 +9,13 @@ server.get("/", (req, res) => {
   res.send(layoutTemplate(title));
 });
 
+
+const books = require('./routes/books.js');
+const movies = require('./routes/movies.js');
+
+
+server.post('/book', books.post);
+server.post('/movie', movies.post);
+
+
 module.exports = server;
