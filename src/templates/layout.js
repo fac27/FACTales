@@ -14,12 +14,16 @@ function layoutTemplate(title) {
       <title>${title}</title>
     </head>
     <body>
+      <section class="flex-col">
     ${homeHeader}
     ${filterRecommendations}
     ${viewRecommendations()}
-    ${formPageHeader}
-    ${movieInputFormTemplate()}
-    ${bookInputFormTemplate()}
+      </section>
+    <section class="flex-col center-flex screen-height font">
+      ${formPageHeader}
+      ${movieInputFormTemplate()}
+      ${bookInputFormTemplate()}
+    </section>
     </body>
   </html>
   `;
