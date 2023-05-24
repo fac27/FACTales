@@ -1,6 +1,5 @@
-
-const { insertMovie } = require(`../model/books.js`);
-const { layoutTemplate } = require("../templates/layout.js");
+const { insertMovie } = require(`../model/movies.js`);
+const { layoutTemplate } = require('../templates/layout.js');
 module.exports = { post, get };
 
 function post(req, res) {
@@ -9,7 +8,6 @@ function post(req, res) {
   res.redirect(`/`);
 }
 
-function get(rq, res) {
-  res.send(layoutTemplate("homePage"));
+function get(req, res) {
+  res.send(layoutTemplate('homePage'));
 }
-
