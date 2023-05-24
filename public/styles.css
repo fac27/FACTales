@@ -2,21 +2,76 @@
 TEXT_____________text styling
 FLEX_____________flex styling 
 STACK____________vertical space 
+SPACE____________horizontal spacing and alignment
+ELEMENTS_________unique element styling
 
 /* TEXT */
 .font {
   font-family: monospace;
 }
-
+.text-xl {
+  font-size: 4rem;
+}
+.text-l {
+  font-size: 2rem;
+}
 /* FLEX */
-
 .flex-col {
   display: flex;
   flex-direction: column;
 }
+.flex-row {
+  display: flex;  
+  flex-direction: row;
+}
+.center-flex {
+  justify-content: center;
+}
+
+/* GRID */
+.grid {
+  height: 100vh;
+  display: grid;
+  border: 2px green solid;
+  grid-template: 150px / auto auto auto;
+  grid-gap: 20px;
+}
 
 /* STACK */
-
 .screen-height {
   height: 100vh;
+}
+.top-l {
+  margin-top: 2rem;
+}
+
+/* SPACE */
+.text-center {
+  text-align: center;
+}
+.center-horizontal {
+  align-items: center;
+}
+
+
+/* ELEMENTS */
+.filter-recs {
+  margin: auto;
+  background-color: #1aaae4;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+}
+
+.input-form {
+  margin: auto;
+  background-color: #f90909;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+}
+
+input {
+  margin-top: 10px;
+  background-color: none;
 }

@@ -6,8 +6,8 @@ function viewRecommendations() {
   // if (type === 'movie') method = selectMovieRecs();
   const recList = recs
     .map(
-      (rec) => /*HTML*/ `
-      <li>
+      (rec, index) => /*HTML*/ `
+      <li style="list-style: none; grid-column: ${index % 3 + 1}; grid-row: ${Math.floor(index / 3) + 1};">
         ${rec.user_name} recommended ${rec.movie_title}
       </li>
     `
@@ -15,9 +15,11 @@ function viewRecommendations() {
     .join("");
 
   return /*html*/ `
-  <p>
+  <section class="grid top-l">
+    
     ${recList}
-  </p>
+    
+  </section>
   `;
 }
 
