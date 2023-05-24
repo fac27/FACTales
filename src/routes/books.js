@@ -4,6 +4,7 @@ module.exports = { post };
 
 function post(req, res) {
   const { user, book, author } = req.query;
+  console.log(user, book, author);
   insertBook(sanitise(user), sanitise(book), sanitise(author));
   res.redirect(`/`);
 }
