@@ -1,5 +1,8 @@
-const { layoutTemplate } = require("../templates/layout");
-const { server } = require("../server.js");
+const { layoutTemplate } = require('../templates/layout');
+const { layoutTemplate } = require('../templates/layout.js');
 
-// const getHomeRoute = 
+module.exports = { get };
 
+function get(req, res) {
+  res.send(layoutTemplate('homePage'));
+}

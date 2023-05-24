@@ -1,9 +1,9 @@
-const { selectMovieRecs } = require("../model/movie-recs.js");
+const { selectMovieRecs } = require('../model/movie-recs.js');
 
 function viewRecommendations() {
   let recs = selectMovieRecs();
   console.log(recs);
-  // if (type === 'movie') method = selectMovieRecs();
+  if (type === 'movie') method = selectMovieRecs();
   const recList = recs
     .map(
       (rec) => /*HTML*/ `
@@ -12,7 +12,7 @@ function viewRecommendations() {
       </li>
     `
     )
-    .join("");
+    .join('');
 
   return /*html*/ `
   <p>
