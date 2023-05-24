@@ -1,6 +1,6 @@
 const test = require('node:test');
 
-const homePage = require('./home.test.js');
+const homePage = require('./home.test');
 
 // TEST INSERT ////////////////////////
 //////////////////////////////////////
@@ -33,5 +33,5 @@ const homePage = require('./home.test.js');
 
 test(
   'select homepage gathers correct database data and displays in html',
-  homePage()
+  homePage
 );

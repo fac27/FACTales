@@ -2,8 +2,10 @@ const { assert } = require('node:assert');
 
 const db = require('../src/database/db.js');
 const { reset } = require('./test-helper_functions.js');
-const model = require('../model/movie-recs.js'); // review file name in path
-const { viewRecommendations } = require('../templates/view-recs.js');
+const model = require('../src/model/movie-recs.js'); // review file name in path
+const { viewRecommendations } = require('../src/templates/view-recs.js');
+
+module.exports = { homePage };
 
 function homePage() {
   reset();
@@ -17,14 +19,18 @@ function homePage() {
 
   const moviesList = model.selectMovieRecs();
   //   check that all movies are correct
-  assert(moviesList[0].user_name, 'Dave');
-  assert(moviesList[0].director, 'Someone');
-  assert(moviesList.length, 4);
+  assert.deepEqual(moviesList[0].user_name, 'Dave', 'found daves movie');
+  assert.deepEqual(
+    moviesList[0].director,
+    'Someone',
+    'found daves movies director'
+  );
+  assert.deepEqual(moviesList.length, 4);
 
   const htmlList = viewRecommendations();
   const daveExists = htmlList.find('Dave');
   const shrekExists = htmlList.find('Shrek');
 
-  assert(daveExists, true);
-  assert(shrekExists, true);
+  assert.deepEqual(daveExists, true, 'html included dave');
+  assert.deepEqual(shrekExists, true, 'html included shrek');
 }
