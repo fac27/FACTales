@@ -1,9 +1,6 @@
-const test = require("node:test");
-const { assert } = require("node:assert");
+const test = require('node:test');
 
-const model = require("../model/routes.js"); // review file name in path
-const db = require("../src/database/db.js");
-const { reset } = require("./test-helper_functions.js");
+const homePage = require('./home.test.js');
 
 // TEST INSERT ////////////////////////
 //////////////////////////////////////
@@ -33,3 +30,8 @@ const { reset } = require("./test-helper_functions.js");
 // select an author and display all their books
 
 // select a book and display every user who recommended it
+
+test(
+  'select homepage gathers correct database data and displays in html',
+  homePage()
+);

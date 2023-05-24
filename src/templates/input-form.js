@@ -1,19 +1,20 @@
-const { selectUserNames } = require("../model/users.js");
+const { selectUserNames } = require('../model/users.js');
 
 const userNamesObj = selectUserNames();
-const userNamesArr = userNamesObj.map(obj => obj.user_name);
+const userNamesArr = userNamesObj.map((obj) => obj.user_name);
 
 function movieInputFormTemplate() {
   return /*html*/ `
   <form method='POST' action="/movie">
-  <select name="user">${userNamesArr.map((user) => `<option>${user}</option>`).join("")}</select>
+    <select name="user">
+      ${userNamesArr.map((user) => `<option>${user}</option>`).join('')}
+    </select>
     <input type="text" name="movie" placeholder="Enter the movie title"/>
     <input type="text" name="director" placeholder="Enter the director's name"/>
     <button id="submit-button" type="submit">Submit</button>
   </form>
   `;
 }
-
 
 function bookInputFormTemplate(userNames) {
   return /*html*/ `
@@ -25,6 +26,6 @@ function bookInputFormTemplate(userNames) {
   `;
 }
 
-   // ${userNames.map((user) => `<option>${user}</option>`).join("")}
+// ${userNames.map((user) => `<option>${user}</option>`).join("")}
 
 module.exports = { movieInputFormTemplate, bookInputFormTemplate };
