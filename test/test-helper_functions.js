@@ -9,5 +9,12 @@ function reset() {
     book_recommendations,
     movie_recommendations,
     users
-  `);
+  DELETE FROM sqlite_sequence
+  WHERE
+    name='movies' OR
+    name='books' OR
+    name='books_recommendations' OR
+    name='movie_recommendations' OR
+    name='users'
+    `);
 }
