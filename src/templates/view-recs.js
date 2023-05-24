@@ -3,19 +3,20 @@ const { displayBookRecs } = require('../model/books.js');
 
 function viewRecommendations() {
   let recs = selectMovieRecs();
+  console.log(recs);
   // if (type === 'movie') method = selectMovieRecs();
-  const recList = recs.map((rec) => {
+  const recList = recs.map((rec) => 
     /*HTML*/ `
       <li>
         ${rec.user_name} recommends ${rec.movie_title}
       </li>
-    `;
-  }).join('');
+    `
+  ).join('');
   
   return /*html*/ `
-  <ul>
+  <p>
     ${recList}
-  </ul>
+  </p>
   `
 };
 
