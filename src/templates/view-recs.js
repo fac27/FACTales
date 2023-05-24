@@ -1,7 +1,6 @@
-function viewRecommendations() {
-  return /*HTML*/ `
+const viewRecommendations =
+/*HTML*/ `
     <div></div>
   `
-}
 
-module.exports = { viewRecommendations }
+module.exports = viewRecommendations

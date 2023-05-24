@@ -1,0 +1,22 @@
+/* 
+TEXT_____________text styling
+FLEX_____________flex styling 
+STACK____________vertical space 
+
+/* TEXT */
+.font {
+  font-family: monospace;
+}
+
+/* FLEX */
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* STACK */
+
+.screen-height {
+  height: 100vh;
+}
