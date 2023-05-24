@@ -1,10 +1,9 @@
-const homeHeader  = require("./home-header.js");
-const filterRecommendations  = require("./filter-recs.js");
-const viewRecommendations = require("./view-recs.js");
-const formPageHeader = require("./formPage-header.js");
-const { movieInputFormTemplate }= require("./input-form.js");
-const { bookInputFormTemplate } = require("./input-form.js");
-
+const homeHeader = require('./home-header.js');
+const filterRecommendations = require('./filter-recs.js');
+const viewRecommendations = require('./view-recs.js');
+const formPageHeader = require('./formPage-header.js');
+const { movieInputFormTemplate } = require('./input-form.js');
+const { bookInputFormTemplate } = require('./input-form.js');
 
 function layoutTemplate(title) {
   return /*html*/ `
@@ -17,7 +16,7 @@ function layoutTemplate(title) {
     <body>
     ${homeHeader}
     ${filterRecommendations}
-    ${viewRecommendations}
+    ${viewRecommendations()}
     ${formPageHeader}
     ${movieInputFormTemplate()}
     ${bookInputFormTemplate()}
@@ -25,6 +24,5 @@ function layoutTemplate(title) {
   </html>
   `;
 }
-
 
 module.exports = { layoutTemplate };
