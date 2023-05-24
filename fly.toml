@@ -19,7 +19,3 @@ primary_region = "lhr"
 [mounts]
 source="volume_one"
 destination="./db.sqlite"
-
-[mounts]
-source="volume_one"
-destination="./db.sqlite"
