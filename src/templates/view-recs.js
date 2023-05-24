@@ -1,20 +1,22 @@
-const { displayMovieRecs } = require('../model/movies.js');
+const { selectMovieRecs } = require("../model/movie-recs.js");
 const { displayBookRecs } = require('../model/books.js');
 
-const viewRecommendations = (type) => {
-  let method = displayBookRecs;
-  if (type === 'movie') method = displayMovieRecs;
-  method.forEach((rec) => {
-    return /*HTML*/ `
-    <div>
+function viewRecommendations() {
+  let recs = selectMovieRecs();
+  // if (type === 'movie') method = selectMovieRecs();
+  const recList = recs.map((rec) => {
+    /*HTML*/ `
       <li>
-        <h2> ${rec.user} recommends {rev.movie_title} </h2>
+        ${rec.user_name} recommends ${rec.movie_title}
       </li>
-    </div>
     `;
-  });
-  {
-  }
+  }).join('');
+  
+  return /*html*/ `
+  <ul>
+    ${recList}
+  </ul>
+  `
 };
 
 module.exports = viewRecommendations;
