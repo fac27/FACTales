@@ -1,11 +1,9 @@
 const { insertBook } = require(`../model/books.js`);
-
+const { sanitise } = require('../model/sanitise.js');
 module.exports = { post };
 
 function post(req, res) {
-  const { user, book, author } = req.body;
-  console.log('posting book');
-  console.log(user, book, author);
-  insertBook(user, book, author);
+  const { user, book, author } = req.query;
+  insertBook(sanitise(user), sanitise(book), sanitise(author));
   res.redirect(`/`);
 }
