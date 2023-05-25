@@ -1,8 +1,10 @@
 /* 
 TEXT_____________text styling
-FLEX_____________flex styling 
+FLEX_____________flex styling
+GRID_____________grid styling 
 STACK____________vertical space 
 SPACE____________horizontal spacing and alignment
+BLOCKS___________represent a piece of interface on a page
 ELEMENTS_________unique element styling
 
 /* TEXT */
@@ -15,6 +17,7 @@ ELEMENTS_________unique element styling
 .text-l {
   font-size: 2rem;
 }
+
 /* FLEX */
 .flex-col {
   display: flex;
@@ -58,9 +61,8 @@ ELEMENTS_________unique element styling
   align-items: center;
 }
 
-
-/* ELEMENTS */
-.filter-recs {
+/* BLOCKS */
+.b-filter-recs {
   margin: auto;
   background-color: #1aaae4;
   height: 200px;
@@ -68,7 +70,7 @@ ELEMENTS_________unique element styling
   border-radius: 100px;
 }
 
-.input-form {
+.b-input-form {
   margin: auto;
   background-color: #f90909;
   height: 200px;
@@ -76,17 +78,19 @@ ELEMENTS_________unique element styling
   border-radius: 100px;
 }
 
-input {
-  margin-top: 10px;
+.b-rec-board {
+  font-family: monospace;
+  background-color: #1aaae4;
+  border-radius: 50px;
 }
 
+/* ELEMENTS */
 li {
   padding-top: 15px;
   padding-left: 15px;
 }
 
-.rec-board {
-  font-family: monospace;
-  background-color: #1aaae4;
-  border-radius: 50px;
+input {
+  margin-top: 10px;
 }
+
