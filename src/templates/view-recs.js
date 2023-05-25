@@ -10,7 +10,6 @@ function setFilterRec(filterRecArg) {
 function viewRecommendations() {
   // const recs = (filterRec === 'movie') ? selectMovieRecs() : selectBookRecs();
   let recList;
-  console.log('filter method', filterRec);
   if (filterRec === 'movie') {
     recList = selectMovieRecs()
       .map(
