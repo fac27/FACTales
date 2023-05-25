@@ -8,7 +8,6 @@ function setFilterRec(filterRecArg) {
 }
 
 function viewRecommendations() {
-  // const recs = (filterRec === 'movie') ? selectMovieRecs() : selectBookRecs();
   let recList;
   console.log('filter method', filterRec);
   if (filterRec === 'movie') {
@@ -38,7 +37,7 @@ function viewRecommendations() {
   }
 
   return /*html*/ `
-  <section class="grid top-xl rec-board">
+  <section class="grid top-xl b-rec-board">
     
     ${recList}
     

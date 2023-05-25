@@ -5,7 +5,7 @@ const userNamesArr = userNamesObj.map((obj) => obj.user_name);
 
 function movieInputFormTemplate() {
   return /*html*/ `
-  <form method='POST' action="/movie" class="flex-col input-form center-horizontal center-flex">
+  <form method='POST' action="/movie" class="flex-col b-input-form center-horizontal center-flex">
   <select name="user">${userNamesArr
     .map((user) => `<option>${user}</option>`)
     .join('')}</select>
@@ -18,7 +18,7 @@ function movieInputFormTemplate() {
 
 function bookInputFormTemplate() {
   return /*html*/ `
-  <form method='POST'  action="/book" class="flex-col input-form center-horizontal center-flex">
+  <form method='POST'  action="/book" class="flex-col b-input-form center-horizontal center-flex">
   <select name="user">${userNamesArr
     .map((user) => `<option>${user}</option>`)
     .join('')}</select>
