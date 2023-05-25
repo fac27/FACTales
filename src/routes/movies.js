@@ -1,13 +1,10 @@
 const { insertMovie } = require(`../model/movies.js`);
-const { layoutTemplate } = require('../templates/layout.js');
-module.exports = { post, get };
+const { sanitise } = require('../model/sanitise.js');
+module.exports = { post };
 
 function post(req, res) {
   const { user, movie, director } = req.body;
-  insertMovie(user, movie, director);
+  console.log(user, movie, director);
+  insertMovie(sanitise(user), sanitise(movie), sanitise(director));
   res.redirect(`/`);
-}
-
-function get(req, res) {
-  res.send(layoutTemplate('homePage'));
 }

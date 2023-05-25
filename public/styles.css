@@ -1,22 +1,96 @@
 /* 
 TEXT_____________text styling
-FLEX_____________flex styling 
+FLEX_____________flex styling
+GRID_____________grid styling 
 STACK____________vertical space 
+SPACE____________horizontal spacing and alignment
+BLOCKS___________represent a piece of interface on a page
+ELEMENTS_________unique element styling
 
 /* TEXT */
 .font {
   font-family: monospace;
 }
+.text-xl {
+  font-size: 4rem;
+}
+.text-l {
+  font-size: 2rem;
+}
 
 /* FLEX */
-
 .flex-col {
   display: flex;
   flex-direction: column;
 }
+.flex-row {
+  display: flex;  
+  flex-direction: row;
+}
+.center-flex {
+  justify-content: center;
+}
+
+/* GRID */
+.grid {
+  height: 100vh;
+  display: grid;
+  grid-template: 150px / auto auto auto;
+  grid-gap: 20px;
+}
 
 /* STACK */
-
 .screen-height {
   height: 100vh;
 }
+.top-xl {
+  margin-top: 10rem;
+}
+.top-l {
+  margin-top: 5rem;
+}
+.top-m {
+  margin-top: 3rem
+}
+
+/* SPACE */
+.text-center {
+  text-align: center;
+}
+.center-horizontal {
+  align-items: center;
+}
+
+/* BLOCKS */
+.b-filter-recs {
+  margin: auto;
+  background-color: #1aaae4;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+}
+
+.b-input-form {
+  margin: auto;
+  background-color: #f90909;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+}
+
+.b-rec-board {
+  font-family: monospace;
+  background-color: #1aaae4;
+  border-radius: 50px;
+}
+
+/* ELEMENTS */
+li {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+input {
+  margin-top: 10px;
+}
+
