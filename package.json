@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "DB_FILE=test.sqlite echo \"Error: no test specified\" && exit 1",
-    "start": "DB_FILE=db.sqlite npm run seed node src/index.js",
+    "start": "DB_FILE=db.sqlite node src/index.js",
     "dev": "DB_FILE=db.sqlite nodemon src/index.js",
     "seed": "DB_FILE=db.sqlite node ./src/database/seed.js"
   },
