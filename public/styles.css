@@ -32,7 +32,6 @@ ELEMENTS_________unique element styling
 .grid {
   height: 100vh;
   display: grid;
-  border: 2px green solid;
   grid-template: 150px / auto auto auto;
   grid-gap: 20px;
 }
@@ -41,8 +40,14 @@ ELEMENTS_________unique element styling
 .screen-height {
   height: 100vh;
 }
+.top-xl {
+  margin-top: 10rem;
+}
 .top-l {
-  margin-top: 2rem;
+  margin-top: 5rem;
+}
+.top-m {
+  margin-top: 3rem
 }
 
 /* SPACE */
@@ -73,5 +78,15 @@ ELEMENTS_________unique element styling
 
 input {
   margin-top: 10px;
-  background-color: none;
+}
+
+li {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.rec-board {
+  font-family: monospace;
+  background-color: #1aaae4;
+  border-radius: 50px;
 }

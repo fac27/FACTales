@@ -4,7 +4,7 @@ console.log(filterRec);
 
 const filterRecommendations = /*html*/ `
   <form method='POST' action="/" class="text-center filter-recs">
-    <select name='filterRecBody'>
+    <select class="top-l" name='filterRecBody'>
       <option value='movie' ${
         filterRec == 'movie' ? ' selected ' : ''
       } >Movies</option>
