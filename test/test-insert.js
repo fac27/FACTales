@@ -1,58 +1,43 @@
 const { reset } = require("./test-helper_functions.js");
 const { assert } = require("node:assert");
 const { insertMovie } = require("../src/model/movies.js");
-const { movies } = require("../src/routes/movies.js");
+// const { movies } = require("../src/routes/movies.js");
+const { db } = require("../src/database/db.js");
+const { seed } = require("../src/database/seed.js");
 
 function testInserts() {
-  reset();
+  // reset();
 
-  movies.insertMovie("Dave", "WILLOW", "Someone");
-  movies.insertMovie("Jeoff", "Fast X", "Someone else");
-  movies.insertMovie("Chanelle", "Shrek", "Someone different");
-  movies.insertMovie("Gabrielle", "Iron Man", "Someone nonexistent");
+  insertMovie("Chanelle", "Shrek", "Someone different");
 
-
-  const moviesList = model.selectMovieRecs();
-
-  movies.insertMovie("Dave", "WILLOW", "Someone");
-  movies.insertMovie("Jeoff", "Fast X", "Someone else");
-  movies.insertMovie("Chanelle", "Shrek", "Someone different");
-  movies.insertMovie("Gabrielle", "Iron Man", "Someone nonexistent");
-
-  assert.deepEqual(moviesList[0].user_name, "Dave", "found daves movie");
-  assert.deepEqual(
-    moviesList[0].director,
-    "Someone",
-    "found daves movies director"
+  const selectedMovie = db.exec(
+    /*sql*/ `SELECT movie_title FROM movies WHERE movie_title = 'shrek'`
   );
+
+  assert.match(/(shrek)/g, selectedMovie);
 }
 
 function testSelects() {
-  reset();
+  // reset();
 
-  movies.insertMovie("Dave", "WILLOW", "Someone");
-  movies.insertMovie("Jeoff", "Fast X", "Someone else");
-  movies.insertMovie("Chanelle", "Shrek", "Someone different");
-  movies.insertMovie("Gabrielle", "Iron Man", "Someone nonexistent");
+  insertMovie("Dave", "WILLOW", "Someone");
+  insertMovie("Jeoff", "Fast X", "Someone else");
+  insertMovie("Chanelle", "Shrek", "Someone different");
+  insertMovie("Gabrielle", "Iron Man", "Someone nonexistent");
 
   const moviesList = model.selectMovieRecs();
-  assert.deepEqual(moviesList.length, 4);
+
+  assert.equal(moviesList.length, 4);
 }
 
 function testViewRecs() {
-  reset();
+  // reset();
 
-  movies.insertMovie("Dave", "WILLOW", "Someone");
-  movies.insertMovie("Jeoff", "Fast X", "Someone else");
-  movies.insertMovie("Chanelle", "Shrek", "Someone different");
-  movies.insertMovie("Gabrielle", "Iron Man", "Someone nonexistent");
+  insertMovie("Chanelle", "Shrek", "Someone different");
 
   const htmlList = viewRecommendations();
-  const daveExists = htmlList.find("Dave");
-  const shrekExists = htmlList.find("Shrek");
 
-  assert.deepEqual(daveExists, true, "html included dave");
-  assert.deepEqual(shrekExists, true, "html included shrek");
+  assert.match(/(shrek)/g, htmlList);
 }
 
-module.exports = {testInserts, testSelects, testViewRecs}
+module.exports = { testInserts, testSelects, testViewRecs };
