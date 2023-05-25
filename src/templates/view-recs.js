@@ -38,7 +38,7 @@ function viewRecommendations() {
   }
 
   return /*html*/ `
-  <section class="grid top-l rec-board">
+  <section class="grid top-xl rec-board">
     
     ${recList}
     

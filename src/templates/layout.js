@@ -19,7 +19,7 @@ function layoutTemplate(title) {
     ${filterRecommendations}
     ${viewRecommendations()}
       </section>
-    <section class="flex-col center-flex screen-height font">
+    <section class="flex-col center-flex screen-height font screen-height">
       ${formPageHeader}
       ${movieInputFormTemplate()}
       ${bookInputFormTemplate()}

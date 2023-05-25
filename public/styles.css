@@ -41,10 +41,13 @@ ELEMENTS_________unique element styling
   height: 100vh;
 }
 .top-xl {
-  margin-top: 5rem;
+  margin-top: 10rem;
 }
 .top-l {
-  margin-top: 2rem;
+  margin-top: 5rem;
+}
+.top-m {
+  margin-top: 3rem
 }
 
 /* SPACE */
