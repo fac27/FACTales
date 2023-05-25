@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for solitary-haze-955 on 2023-05-25T11:48:59+01:00
+# fly.toml app configuration file generated for summer-flower-8804 on 2023-05-25T13:26:41+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "solitary-haze-955"
+app = "summer-flower-8804"
 primary_region = "lhr"
 
 [http_service]
@@ -12,7 +12,3 @@ primary_region = "lhr"
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
-
-[mounts]
-   source = "data"
-   destination = "/data"
