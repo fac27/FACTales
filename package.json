@@ -29,5 +29,8 @@
   },
   "volta": {
     "node": "20.2.0"
- }
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.2.7"
+  }
 }
