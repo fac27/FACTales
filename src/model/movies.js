@@ -1,6 +1,8 @@
 const db = require('../database/db.js');
 const { selectUser } = require('./users.js');
 
+module.exports = { insertMovie };
+
 const select_movie = db.prepare(/*sql*/ `
   SELECT movie_id FROM movies WHERE movie_title = ? AND director = ? LIMIT 1
 `);
@@ -22,5 +24,3 @@ function insertMovie(user, movie, director) {
   }
   insert_movie_recommendation.run(user_id, movie_id.movie_id);
 }
-
-module.exports = { insertMovie };

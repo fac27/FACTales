@@ -1,4 +1,6 @@
-const db = require("../database/db.js");
+const db = require('../database/db.js');
+
+module.exports = { selectMovieRecs };
 
 const select_movie_recs = db.prepare(/*sql*/ `
 SELECT 
@@ -12,5 +14,3 @@ JOIN movies ON movie_recommendations.movie_id = movies.movie_id
 function selectMovieRecs() {
   return select_movie_recs.all();
 }
-
-module.exports = { selectMovieRecs };

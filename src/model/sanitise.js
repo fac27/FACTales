@@ -1,3 +1,5 @@
+module.exports = { sanitise };
+
 function sanitise(unsafeData) {
   const unsafeCharactersObject = {
     '<': '&lt;',
@@ -9,5 +11,3 @@ function sanitise(unsafeData) {
     (matched) => unsafeCharactersObject[matched]
   );
 }
-
-module.exports = { sanitise };

@@ -1,5 +1,7 @@
 const { selectUserNames } = require('../model/users.js');
 
+module.exports = { movieInputFormTemplate, bookInputFormTemplate };
+
 const userNamesObj = selectUserNames();
 const userNamesArr = userNamesObj.map((obj) => obj.user_name);
 
@@ -30,5 +32,3 @@ function bookInputFormTemplate() {
 }
 
 // ${userNames.map((user) => `<option>${user}</option>`).join("")}
-
-module.exports = { movieInputFormTemplate, bookInputFormTemplate };

@@ -1,6 +1,8 @@
 const { selectMovieRecs } = require('../model/movie-recs.js');
 const { selectBookRecs } = require('../model/books.js');
 
+module.exports = { viewRecommendations, setFilterRec };
+
 let filterRec;
 
 function setFilterRec(filterRecArg) {
@@ -44,5 +46,3 @@ function viewRecommendations() {
   </section>
   `;
 }
-
-module.exports = { viewRecommendations, setFilterRec };

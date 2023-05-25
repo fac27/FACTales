@@ -1,5 +1,6 @@
 const { insertMovie } = require(`../model/movies.js`);
 const { sanitise } = require('../model/sanitise.js');
+
 module.exports = { post };
 
 function post(req, res) {
