@@ -1,6 +1,6 @@
 const { filterRec } = require('../templates/view-recs.js');
 
-console.log(filterRec);
+module.exports = filterRecommendations;
 
 const filterRecommendations = /*html*/ `
   <form method='POST' action="/" class="text-center b-filter-recs">

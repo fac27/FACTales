@@ -1,6 +1,8 @@
 const { selectMovieRecs } = require('../model/movie-recs.js');
 const { selectBookRecs } = require('../model/books.js');
 
+module.exports = { viewRecommendations, setFilterRec };
+
 let filterRec;
 
 function setFilterRec(filterRecArg) {
@@ -9,7 +11,6 @@ function setFilterRec(filterRecArg) {
 
 function viewRecommendations() {
   let recList;
-  console.log('filter method', filterRec);
   if (filterRec === 'movie') {
     recList = selectMovieRecs()
       .map(
@@ -44,5 +45,3 @@ function viewRecommendations() {
   </section>
   `;
 }
-
-module.exports = { viewRecommendations, setFilterRec };
